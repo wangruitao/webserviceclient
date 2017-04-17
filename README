@@ -1,0 +1,14 @@
+通过wsimport生成客户端代码
+
+通过jdk自带的wsimport生成客户端代码。进入$JAVA_HOME/bin下，新建bin和src两个文件夹，执行以下命令：
+wsimport -d ./bin -s ./src -keep http://localhost:8080/services/layout?wsdl
+其中几个参数有以下几个，
+-d:生成客户端执行类的class文件存放目录，
+-s:生成客户端执行类的源文件存放目录，
+-p:定义生成类的包名
+  -verbose:显示生成过程
+需要注意的是：无论-d或是-s后的目录必须在文件系统中存在，否则报错。
+
+
+
+将src下连同包一起复制到程序中，编写客户端入口类：
